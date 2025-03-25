@@ -1,0 +1,106 @@
+:root {
+  --netflix-red-color: rgb(214, 28, 28);
+  --default-margin: 15px;
+  --btn-font-size: 16px;
+  --btn-height: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: 0.2s;
+}
+
+.content-width {
+  max-width: 1150px;
+}
+
+body {
+  background: black;
+  display: flex;
+  /*  justify-content: center;*/
+  align-items: center;
+  flex-direction: column;
+}
+
+.back-to-main-pager-btn {
+  color: white;
+  background: var(--netflix-red-color);
+  text-align: center;
+  width: 150px;
+  height: var(--btn-height);
+  font-size: var(--btn-font-size);
+  text-decoration: none;
+  margin-top: 100px;
+  line-height: var(--btn-height);
+  margin-bottom: var(--default-margin);
+}
+
+.selection {
+  width: 150px;
+  height: 30px;
+  margin: var(--default-margin);
+  color: white;
+  background: black;
+}
+
+.result-list {
+  margin-top: var(--default-margin);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-div {
+  width: 300px;
+  color: white;
+}
+
+.movie-img {
+  width: 100%;
+  transform: rotate(7deg);
+}
+
+.movie-img:hover {
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+
+#modalDialog {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1; /* on top of everything */
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+#modalContent {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modalButton {
+  /*  display: flex;*/
+  /*  justify-self: center;*/
+  margin-top: 50px;
+  color: white;
+  background: var(--netflix-red-color);
+  height: var(--btn-height);
+  width: 120px;
+  line-height: var(--btn-height);
+  font-size: var(--btn-font-size);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}

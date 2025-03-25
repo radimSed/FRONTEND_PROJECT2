@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="movies.css" />
+    <title>Netflix fake</title>
+  </head>
+  <body>
+    <a href="index.html" class="back-to-main-pager-btn">Úvodní strana</a>
+    <select class="selection">
+      <option value="" disabled selected>Vyberte možnost</option>
+      <option value="Girl">Girl</option>
+      <option value="Boy">Boy</option>
+      <option value="Avengers">Avengers</option>
+      <option value="Horor">Horor</option>
+      <option value="Terminator">Terminator</option>
+      <option value="Predator">Predator</option>
+      <option value="Smrtonosná">Smrtonosná</option>
+      <option value="Comando">Comando</option>
+      <option value="Simpsonovi">Simpsonovi</option>
+    </select>
+
+    <div class="result-list"></div>
+
+    <div id="modalDialog">
+      <div id="modalContent">
+        <div class="genre"></div>
+        <br />
+        <div class="summary"></div>
+        <button class="modalButton">Zavřít</button>
+      </div>
+    </div>
+
+    <script src="movies.js"></script>
+  </body>
+</html>
