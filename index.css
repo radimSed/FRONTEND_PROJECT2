@@ -203,7 +203,7 @@ body {
 .find-another-btn {
   background: var(--netflix-red-color);
   color: white;
-  width: 120px;
+  width: 140px;
   height: var(--btn-height);
   text-align: center;
   line-height: var(--btn-height);
