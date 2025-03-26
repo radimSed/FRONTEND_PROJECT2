@@ -69,7 +69,11 @@ class MovieInfo {
         this.name = name;
         this.genre = genre;
         this.image = image;
-        this.summary = summary;
+        if(summary === null){
+            this.summary = 'Summary not found';
+        } else {
+            this.summary = summary;
+        }
         this.resultDiv = resultDiv;
         this.modalDialog = modalDialog;
 
@@ -83,7 +87,7 @@ class MovieInfo {
             movieImg.src = this.image;
         }
         const movieGenres:string = this.getGenres();
-        movieImg.alt = `${this.name}\n${movieGenres}`;
+        movieImg.alt = `${this.name}`;
         movieImg.title = `${this.name}\n${movieGenres}`;
         movieImg.classList.add('movie-img');
         movieDiv.appendChild(movieImg);
@@ -91,13 +95,7 @@ class MovieInfo {
         this.resultDiv.appendChild(movieDiv);
 
         movieDiv.addEventListener('click', () => {
-            let genres:string = 'Genres:';
-            for(let i = 0; i < this.genre.length; i++ ){
-                genres += ` ${this.genre[i]},`;
-            }
-            genres = genres.substring(0, genres.length - 1);
-
-            this.modalDialog.getModalGenre().textContent = genres;
+            this.modalDialog.getModalGenre().textContent = this.getGenres();
             this.modalDialog.getModalSummary().innerHTML = this.summary;
 
             modalDialog.setDisplayProperty('block');
@@ -106,12 +104,18 @@ class MovieInfo {
     }
 
     private getGenres():string {
-        let result:string = '';
-
-        for(let i:number = 0; i < this.genre.length; i++){
-            result += ` ${this.genre[i]}`;
-        }
-        return result;
+            let genres:string = 'Genres:';
+            if(this.genre.length === 0){
+                genres += ' not specified,'
+            } else {
+                for(let i = 0; i < this.genre.length; i++ ){
+                    genres += ` ${this.genre[i]},`;
+                }
+            }
+            
+            genres = genres.substring(0, genres.length - 1);
+        
+            return genres;
     }
 }
 
